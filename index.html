@@ -13,7 +13,7 @@
   .wdcf-input {
     width: 100%; background: #1a1a1a; border: 1px solid #2e2e2e;
     border-radius: 6px; color: #ede8de;
-    font-size: 20px; padding: 10px 14px; font-family: 'DM Mono', monospace;
+    font-size: 15px; padding: 7px 6px; font-family: 'DM Mono', monospace;
     outline: none; transition: border-color 0.2s;
   }
   .wdcf-input:focus { border-color: #c9a84c; }
@@ -26,47 +26,44 @@
     background: #252525; border-radius: 2px; outline: none; cursor: pointer;
   }
   .wdcf-slider::-webkit-slider-thumb {
-    -webkit-appearance: none; width: 20px; height: 20px;
-    background: #c9a84c; border-radius: 50%; border: 3px solid #0f0f0f;
+    -webkit-appearance: none; width: 16px; height: 16px;
+    background: #c9a84c; border-radius: 50%; border: 2px solid #0f0f0f;
     box-shadow: 0 0 0 1px #c9a84c66; cursor: pointer; transition: box-shadow 0.15s;
   }
   .wdcf-slider::-webkit-slider-thumb:hover { box-shadow: 0 0 0 4px #c9a84c33; }
   .wdcf-slider::-moz-range-thumb {
-    width: 18px; height: 18px; background: #c9a84c;
-    border-radius: 50%; border: 3px solid #0f0f0f; cursor: pointer;
+    width: 14px; height: 14px; background: #c9a84c;
+    border-radius: 50%; border: 2px solid #0f0f0f; cursor: pointer;
   }
   .wdcf-unit-btn {
-    padding: 6px 14px; border: none; cursor: pointer; font-size: 12px;
+    padding: 5px 10px; border: none; cursor: pointer; font-size: 11px;
     font-weight: 600; font-family: 'DM Sans', sans-serif;
     letter-spacing: 0.06em; transition: all 0.15s;
   }
   .wdcf-copy-btn {
     background: transparent; border: 1px solid #2e2e2e; color: #6e6e6e;
-    padding: 4px 10px; border-radius: 4px; font-size: 11px; cursor: pointer;
+    padding: 3px 8px; border-radius: 4px; font-size: 10px; cursor: pointer;
     font-family: 'DM Sans', sans-serif; transition: all 0.15s;
   }
   .wdcf-copy-btn:hover { border-color: #c9a84c; color: #c9a84c; }
-  .wdcf-strap-card {
-    background: #0c0c0c; border-radius: 8px; padding: 14px;
-    border: 1px solid #1e1e1e; flex: 1;
-  }
   .wdcf-bar-fill {
     height: 100%; border-radius: 2px;
-    transition: width 0.4s ease, background 0.3s ease;
+    transition: width 0.4s ease;
   }
   .wdcf-warn {
-    background: #1a1200; border: 1px solid #3a2800; border-radius: 8px;
-    padding: 12px 14px; font-size: 12px; color: #c9853c; line-height: 1.5;
-    display: none; margin-bottom: 16px;
+    background: #1a1200; border: 1px solid #3a2800; border-radius: 6px;
+    padding: 8px 10px; font-size: 11px; color: #c9853c; line-height: 1.5;
+    display: none; margin-bottom: 10px;
   }
 </style>
 </head>
 <body>
 
-<div class="wdcf-root" style="background:#0f0f0f; padding:24px 20px 32px; font-family:'DM Sans',sans-serif; width:100%; max-width:640px;">
+<div class="wdcf-root" style="background:#0f0f0f; padding:16px 14px 20px; font-family:'DM Sans',sans-serif; width:100%; max-width:420px;">
 
-  <div style="text-align:center; margin-bottom:24px;">
-    <svg width="24" height="24" viewBox="0 0 28 28" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;">
+  <!-- Header -->
+  <div style="text-align:center; margin-bottom:14px;">
+    <svg width="20" height="20" viewBox="0 0 28 28" style="margin-bottom:6px; display:block; margin-left:auto; margin-right:auto;">
       <circle cx="14" cy="14" r="12" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
       <circle cx="14" cy="14" r="1.5" fill="#c9a84c"/>
       <line x1="14" y1="14" x2="14" y2="6" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
@@ -76,121 +73,154 @@
       <line x1="3.5" y1="14" x2="5" y2="14" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
       <line x1="23" y1="14" x2="24.5" y2="14" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round"/>
     </svg>
-    <h1 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:#ede8de; margin-bottom:4px;">Watch Dial Centering Formula</h1>
-    <p style="color:#4a4a4a; font-size:12px;">Both straps equal · dial centered · buckle centered</p>
+    <h1 style="font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:#ede8de; margin-bottom:2px;">Watch Dial Centering Formula</h1>
+    <p style="color:#4a4a4a; font-size:11px;">One formula · equal straps · everything centered</p>
   </div>
 
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+  <!-- Inputs -->
+  <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:12px; align-items:flex-start; justify-content:center;">
     <div>
-      <label style="display:block; color:#c9a84c; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:8px; font-weight:600;">Wrist Circumference</label>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <input class="wdcf-input" type="number" id="wristInput" placeholder="6.5" style="flex:1;" oninput="wdcfCalc()"/>
+      <label style="display:block; color:#c9a84c; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:5px; font-weight:600; text-align:center;">Wrist Circumference</label>
+      <div style="display:flex; gap:6px; align-items:center;">
+        <input class="wdcf-input" type="text" inputmode="decimal" id="wristInput" placeholder="6.5" style="width:58px;" maxlength="4"
+          oninput="wdcfFilter(this);wdcfCalc()"/>
         <div style="display:flex; background:#141414; border-radius:6px; overflow:hidden; border:1px solid #252525; flex-shrink:0;">
           <button class="wdcf-unit-btn" id="btnMm" onclick="wdcfUnit('mm')" style="background:transparent; color:#5a5a5a;">mm</button>
           <button class="wdcf-unit-btn" id="btnIn" onclick="wdcfUnit('in')" style="background:#c9a84c; color:#0f0f0f;">in</button>
         </div>
       </div>
-      <div id="wristError" style="color:#c05858; font-size:10px; margin-top:4px; display:none;"></div>
+      <div id="wristError" style="color:#c05858; font-size:9px; margin-top:3px; display:none;"></div>
     </div>
-    <div>
-      <label style="display:block; color:#c9a84c; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:8px; font-weight:600;">Lug-to-Lug <span style="color:#3a3a3a;">(mm)</span></label>
-      <input class="wdcf-input" type="number" id="lugInput" placeholder="47" oninput="wdcfCalc()"/>
-      <div id="lugError" style="color:#c05858; font-size:10px; margin-top:4px; display:none;"></div>
+    <div style="text-align:center;">
+      <label style="display:block; color:#c9a84c; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:5px; font-weight:600; text-align:center;">Lug-to-Lug <span style="color:#ede8de; text-transform:none;">(mm)</span></label>
+      <input class="wdcf-input" type="text" inputmode="decimal" id="lugInput" placeholder="47" style="width:55px;" maxlength="5"
+        oninput="wdcfFilter(this);wdcfCalc()"/>
+      <div id="lugError" style="color:#c05858; font-size:9px; margin-top:3px; display:none;"></div>
     </div>
   </div>
 
-  <div style="margin-bottom:20px;">
-    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;">
-      <label style="color:#c9a84c; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600;">Desired Tail Length</label>
-      <span id="tailLabel" style="font-family:'DM Mono',monospace; color:#ede8de; font-size:15px;">20mm</span>
+  <!-- Tail slider -->
+  <div style="margin-bottom:12px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px;">
+      <label style="color:#c9a84c; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600;">Desired Tail Length</label>
+      <span id="tailLabel" style="font-family:'DM Mono',monospace; color:#ede8de; font-size:13px;">20mm</span>
     </div>
-    <input class="wdcf-slider" type="range" id="tailSlider" min="10" max="60" value="20" oninput="wdcfTail(this.value)"/>
-    <div style="display:flex; justify-content:space-between; color:#333; font-size:10px; margin-top:4px;">
+    <input class="wdcf-slider" type="range" id="tailSlider" min="10" max="45" value="20" oninput="wdcfTail(this.value)"/>
+    <div style="display:flex; justify-content:space-between; color:#333; font-size:9px; margin-top:3px;">
       <span>Minimal · 10mm</span>
       <span id="tailDesc" style="color:#4a4a4a;">Standard tail — neat appearance</span>
-      <span>Generous · 60mm</span>
+      <span>Generous · 45mm</span>
     </div>
   </div>
 
   <div class="wdcf-warn" id="warnBox"></div>
 
-  <div id="resultCard" style="background:#141414; border:1px solid #252525; border-radius:12px; padding:20px; margin-bottom:16px; display:none;">
-    <div style="background:#0c0c0c; border:1px solid #1e1e1e; border-radius:8px; padding:14px; text-align:center; margin-bottom:16px;">
-      <div style="color:#3e3e3e; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:4px;">Standard Notation</div>
-      <div style="display:flex; align-items:center; justify-content:center; gap:10px;">
-        <span id="notation" style="font-family:'DM Mono',monospace; font-size:30px; color:#c9a84c; font-weight:500; letter-spacing:0.04em;">—/—</span>
-        <button class="wdcf-copy-btn" onclick="wdcfCopy()" id="copyBtn">copy</button>
+  <!-- Result card -->
+  <div id="resultCard" style="background:#141414; border:1px solid #252525; border-radius:10px; padding:12px; margin-bottom:10px; display:none; width:fit-content; margin-left:auto; margin-right:auto;">
+
+    <!-- 3-column: 6 o'clock | notation | 12 o'clock -->
+    <div style="display:grid; grid-template-columns:auto auto auto; gap:12px; align-items:center; justify-content:center; margin-bottom:10px;">
+
+      <!-- 6 o'clock strap -->
+      <div>
+        <div style="color:#8b84e8; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:4px; font-weight:600;">6 o'clock strap</div>
+        <div style="display:flex; align-items:baseline; gap:2px; margin-bottom:2px;">
+          <span id="longStrap" style="font-family:'DM Mono',monospace; font-size:22px; color:#ede8de; font-weight:500;">—</span>
+          <span style="color:#3e3e3e; font-size:11px;">mm</span>
+        </div>
+        <div style="color:#3a3a3a; font-size:9px;">Long blade · hole side</div>
       </div>
-      <div style="color:#3a3a3a; font-size:10px; margin-top:3px;">6 o'clock (long) / 12 o'clock (short) · mm</div>
+
+      <!-- Standard notation (center) -->
+      <div style="text-align:center; padding:0 10px;">
+        <div style="color:#3e3e3e; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:3px;">Standard Notation</div>
+        <div style="display:flex; align-items:center; gap:6px; justify-content:center;">
+          <span id="notation" style="font-family:'DM Mono',monospace; font-size:22px; color:#c9a84c; font-weight:500; letter-spacing:0.04em;">—/—</span>
+          <button class="wdcf-copy-btn" onclick="wdcfCopy()" id="copyBtn">copy</button>
+        </div>
+        <div style="color:#3a3a3a; font-size:9px; margin-top:2px; white-space:nowrap;">6 o'clock / 12 o'clock · mm</div>
+      </div>
+
+      <!-- 12 o'clock strap -->
+      <div style="text-align:right;">
+        <div style="color:#2ab38a; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:4px; font-weight:600;">12 o'clock strap</div>
+        <div style="display:flex; align-items:baseline; gap:2px; margin-bottom:2px; justify-content:flex-end;">
+          <span id="shortStrap" style="font-family:'DM Mono',monospace; font-size:22px; color:#ede8de; font-weight:500;">—</span>
+          <span style="color:#3e3e3e; font-size:11px;">mm</span>
+        </div>
+        <div style="color:#3a3a3a; font-size:9px;">Short blade · buckle side</div>
+      </div>
+
     </div>
 
-    <div style="display:flex; gap:10px; margin-bottom:16px;">
-      <div class="wdcf-strap-card">
-        <div style="color:#8b84e8; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px; font-weight:600;">6 o'clock strap</div>
-        <div style="display:flex; align-items:baseline; gap:3px; margin-bottom:3px;">
-          <span id="longStrap" style="font-family:'DM Mono',monospace; font-size:26px; color:#ede8de; font-weight:500;">—</span>
-          <span style="color:#3e3e3e; font-size:12px;">mm</span>
-        </div>
-        <div style="color:#3a3a3a; font-size:10px; line-height:1.4;">Long blade · hole side</div>
+    <!-- Arc coverage -->
+    <div style="border-top:1px solid #1e1e1e; padding-top:10px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+        <span style="color:#3e3e3e; font-size:9px; letter-spacing:0.12em; text-transform:uppercase;">Lug-to-lug arc coverage</span>
+        <span id="pctLabel" style="font-family:'DM Mono',monospace; font-size:11px; color:#6e6e6e;">—%</span>
       </div>
-      <div class="wdcf-strap-card">
-        <div style="color:#2ab38a; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:6px; font-weight:600;">12 o'clock strap</div>
-        <div style="display:flex; align-items:baseline; gap:3px; margin-bottom:3px;">
-          <span id="shortStrap" style="font-family:'DM Mono',monospace; font-size:26px; color:#ede8de; font-weight:500;">—</span>
-          <span style="color:#3e3e3e; font-size:12px;">mm</span>
-        </div>
-        <div style="color:#3a3a3a; font-size:10px; line-height:1.4;">Short blade · buckle side</div>
-      </div>
-    </div>
-
-    <div style="border-top:1px solid #1e1e1e; padding-top:14px;">
-      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
-        <span style="color:#3e3e3e; font-size:10px; letter-spacing:0.12em; text-transform:uppercase;">Lug-to-lug arc coverage</span>
-        <span id="pctLabel" style="font-family:'DM Mono',monospace; font-size:12px; color:#6e6e6e;">—%</span>
-      </div>
-      <div style="height:4px; background:#1e1e1e; border-radius:2px; margin-bottom:6px; position:relative; overflow:hidden;">
-        <div style="position:absolute; left:33.3%; width:16.7%; height:100%; background:#5a9e7233; border-radius:2px;"></div>
+      <div style="height:3px; background:#1e1e1e; border-radius:2px; margin-bottom:4px; overflow:hidden;">
         <div class="wdcf-bar-fill" id="propBar" style="width:0%; background:#6e6e6e;"></div>
       </div>
-      <div style="display:flex; justify-content:space-between; color:#2a2a2a; font-size:9px; margin-bottom:8px;">
-        <span>0%</span><span style="color:#3a6e4a;">ideal zone (10–15%)</span><span>30%+</span>
+      <div style="display:flex; justify-content:space-between; color:#2a2a2a; font-size:8px; margin-bottom:6px;">
+        <span>0%</span><span style="color:#3a3a3a;">arc coverage (reference only)</span><span>30%+</span>
       </div>
-      <div id="propStatus" style="font-size:11px; color:#6e6e6e; margin-bottom:10px;"></div>
-      <div style="font-size:10px; color:#2e2e2e; line-height:1.6; border-top:1px solid #1e1e1e; padding-top:10px;">
-        Note: this measures lug-to-lug arc coverage only — not visual case size. A watch can have long lugs with a small case diameter (like many field watches), or a large case with short lugs. Case diameter vs. wrist width is a separate consideration.
+      <div style="font-size:9px; color:#2e2e2e; line-height:1.6; border-top:1px solid #1e1e1e; padding-top:8px;">
+        Note: this measures lug-to-lug arc coverage only — not visual case size. Ideal arc coverage ranges are under active research and will be addressed in a companion piece.
       </div>
     </div>
   </div>
 
-  <div id="hintBox" style="background:#141414; border:1px solid #1e1e1e; border-radius:8px; padding:14px; text-align:center; margin-bottom:16px;">
-    <p style="color:#3a3a3a; font-size:12px; line-height:1.6;">Enter your wrist circumference and lug-to-lug distance to calculate perfectly balanced strap lengths.</p>
+  <!-- Hint box -->
+  <div id="hintBox" style="background:#141414; border:1px solid #1e1e1e; border-radius:6px; padding:10px; text-align:center; margin-bottom:10px;">
+    <p style="color:#ede8de; font-size:11px; line-height:1.6;">Enter your wrist circumference and lug-to-lug distance to calculate perfectly balanced strap lengths.</p>
   </div>
 
-  <div style="border:1px solid #1a1a1a; border-radius:8px; padding:14px 18px; text-align:center;">
-    <div style="font-family:'Playfair Display',serif; color:#c9a84c; font-size:12px; font-style:italic; margin-bottom:3px;">Watch Dial Centering Formula</div>
-    <div style="font-family:'DM Mono',monospace; color:#3e3e3e; font-size:12px; margin-bottom:3px;">(C − L) ÷ 2 = ideal functional strap length</div>
-    <div style="color:#2a2a2a; font-size:10px;">C = wrist circumference · L = lug-to-lug distance</div>
+  <!-- Footer formula -->
+  <div style="border:1px solid #1a1a1a; border-radius:6px; padding:10px 14px; text-align:center; width:fit-content; margin:0 auto;">
+    <div style="font-family:'Playfair Display',serif; color:#c9a84c; font-size:11px; font-style:italic; margin-bottom:2px;">Watch Dial Centering Formula</div>
+    <div style="font-family:'DM Mono',monospace; color:#3e3e3e; font-size:11px; margin-bottom:2px;">(C − L) ÷ 2 = ideal functional strap length</div>
+    <div style="color:#2a2a2a; font-size:9px;">C = wrist circumference · L = lug-to-lug distance</div>
   </div>
 </div>
 
 <script>
 var unit='in', tail=20;
-var MIN_WRIST_MM=100, MAX_WRIST_MM=300;
+var MIN_WRIST_MM=99, MAX_WRIST_MM=300;
 var MIN_LUG=5, MAX_LUG=100;
+var wristMmPrecise=null;
+
+function wdcfFilter(el){
+  var v=el.value.replace(/[^0-9.]/g,'');
+  var d=v.indexOf('.');
+  if(d!==-1){
+    v=v.slice(0,d+1)+v.slice(d+1).replace(/\./g,'');
+    if(v.length>d+3) v=v.slice(0,d+3);
+  }
+  el.value=v;
+  if(unit==='mm') wristMmPrecise=null; // user edited mm directly, clear stored value
+}
 
 function wdcfUnit(u){
   var w=parseFloat(document.getElementById('wristInput').value);
-  var wMm=unit==='in'?w*25.4:w;
+  var wMm;
+  if(unit==='in'){
+    wMm=w*25.4;
+    wristMmPrecise=wMm; // store precise mm when converting from inches
+  } else {
+    wMm=(wristMmPrecise!==null)?wristMmPrecise:w; // use precise value if available
+  }
   unit=u;
   document.getElementById('btnMm').style.background=u==='mm'?'#c9a84c':'transparent';
   document.getElementById('btnMm').style.color=u==='mm'?'#0f0f0f':'#5a5a5a';
   document.getElementById('btnIn').style.background=u==='in'?'#c9a84c':'transparent';
   document.getElementById('btnIn').style.color=u==='in'?'#0f0f0f':'#5a5a5a';
-  document.getElementById('wristInput').placeholder=u==='mm'?'165':'6.5';
+  document.getElementById('wristInput').placeholder=u==='mm'?'170':'6.7';
+  document.getElementById('wristInput').style.width=u==='mm'?'55px':'68px';
   if(!isNaN(wMm)&&wMm>0){
     var converted=u==='in'
       ? parseFloat((wMm/25.4).toFixed(2))
-      : parseFloat(wMm.toFixed(2));
+      : Math.round(wMm);
     document.getElementById('wristInput').value=converted;
   }
   wdcfCalc();
@@ -201,13 +231,18 @@ function wdcfTail(v){
   document.getElementById('tailLabel').textContent=tail+'mm';
   document.getElementById('tailDesc').textContent=
     tail<15?'Minimal — clean, military look':
-    tail<25?'Standard tail — neat appearance':
-    tail<40?'Generous — comfortable overlap':
-    'Long tail — maximum adjustability';
+    tail<35?'Standard tail — neat appearance':
+    'Generous — comfortable overlap';
   wdcfCalc();
 }
 
 function wdcfCalc(){
+  var wRaw=document.getElementById('wristInput').value;
+  var lRaw=document.getElementById('lugInput').value;
+  var wDot=wRaw.indexOf('.');
+  if(wDot!==-1&&wRaw.length>wDot+3) document.getElementById('wristInput').value=wRaw.slice(0,wDot+3);
+  var lDot=lRaw.indexOf('.');
+  if(lDot!==-1&&lRaw.length>lDot+3) document.getElementById('lugInput').value=lRaw.slice(0,lDot+3);
   var w=parseFloat(document.getElementById('wristInput').value);
   var l=parseFloat(document.getElementById('lugInput').value);
   var wMm=unit==='in'?w*25.4:w;
@@ -255,17 +290,9 @@ function wdcfCalc(){
     document.getElementById('notation').textContent=lo+'/'+sh;
     document.getElementById('pctLabel').textContent=pct.toFixed(1)+'%';
     var bw=Math.min(pct,30)/30*100;
-    var pc,pt;
-    if(pct<5){pc='#c05858';pt='Lug-to-lug covers very little of your wrist arc — straps will be long';}
-    else if(pct<10){pc='#c9853c';pt='Lug-to-lug arc coverage is on the small side';}
-    else if(pct<=15){pc='#5a9e72';pt='✓ Ideal lug-to-lug arc coverage for your wrist';}
-    else if(pct<=20){pc='#c9853c';pt='Lug-to-lug arc coverage is slightly large, but wearable';}
-    else{pc='#c05858';pt='Lug-to-lug covers a large portion of your wrist arc';}
     document.getElementById('propBar').style.width=bw+'%';
-    document.getElementById('propBar').style.background=pc;
-    document.getElementById('propStatus').textContent=pt;
-    document.getElementById('propStatus').style.color=pc;
-    document.getElementById('pctLabel').style.color=pc;
+    document.getElementById('propBar').style.background='#6e6e6e';
+    document.getElementById('pctLabel').style.color='#6e6e6e';
     rc.style.display='block'; hb.style.display='none';
   } else {
     rc.style.display='none';
